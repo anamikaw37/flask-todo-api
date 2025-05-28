@@ -4,6 +4,10 @@ import uuid
 app = Flask(__name__)
 #in memory store for tasks
 tasks = {}
+@app.route('/')
+def home():
+    return "Welcome to my Flask app!"
+
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
