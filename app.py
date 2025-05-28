@@ -4,9 +4,9 @@ import uuid
 app = Flask(__name__)
 #in memory store for tasks
 tasks = {}
-@app.route('/')
+@app.route("/")
 def home():
-    return "Welcome to my Flask app!"
+    return "Hello, Azure! Flask is running."
 
 
 @app.route('/tasks', methods=['GET'])
@@ -34,7 +34,7 @@ def delete_task(task_id):
     return jsonify({"error": "Task not found"}), 404
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
         
     
     
