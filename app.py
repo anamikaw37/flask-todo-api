@@ -8,6 +8,17 @@ tasks = {}
 def home():
     return "Hello, Azure! Flask is running."
 
+@app.route('/')
+def index():
+    return "Welcome to Task Tracker API!"
+
+@app.route('/tasks')
+def tasks():
+    return jsonify([
+        {"id": 1, "title": "Learn Azure", "done": False},
+        {"id": 2, "title": "Build Flask App", "done": True}
+    ])
+
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
