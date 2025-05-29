@@ -1,4 +1,3 @@
 #!/bin/bash
-
-cd /home/site/wwwroot
-gunicorn --bind=0.0.0.0:8000 app:app
+pip install -r /home/site/wwwroot/tasktracker/requirements.txt
+gunicorn --bind=0.0.0.0 --chdir /home/site/wwwroot/tasktracker tasktracker.app:app
